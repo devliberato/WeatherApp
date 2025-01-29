@@ -1,0 +1,75 @@
+/* Cor de fundo e fonte */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e9ecef; /* fundo suave claro */
+  color: #495057; /* cor do texto mais suave */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #343a40; /* tom mais escuro e suave */
+  margin-bottom: 20px;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.container {
+  background-color: #ffffff; /* fundo claro e neutro */
+  height: 500px;
+  width: 450px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra suave para destacar */
+  border-radius: 8px; /* bordas levemente arredondadas */
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  margin-left: 1rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #4CAF50; /* verde suave */
+  color: #ffffff; /* texto branco */
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #45a049; /* verde mais escuro ao passar o mouse */
+  opacity: 0.8;
+}
+
+.form-container input {
+  flex: 1;
+  border: 1px solid #ced4da; /* borda suave */
+  outline: none;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  background-color: #f8f9fa; /* fundo claro do input */
+  color: #495057; /* texto do input mais suave */
+}
+
+.weather-container {
+  margin-top: 2rem;
+}
+
+
+.weather-container p {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
