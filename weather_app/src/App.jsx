@@ -1,6 +1,11 @@
 import { useState} from 'react'
 import axios from "axios"
 import cloudy from "./img/cloud.png"
+import sun from "./img/sun.png"
+import overcast from "./img/overcast.png"
+import cloudburst from "./img/cloudburst.png"
+import sporadicshowers from "./img/sporadicshowers.png"
+import weakrain from "./img/weakrain.png"
 
 
 import './App.css'
@@ -36,7 +41,23 @@ function App() {
 
 if(res.data.toLowerCase().includes("parcialmente nublado")) {
   setImagemClima(cloudy)
-} else {
+} 
+
+else if(res.data.toLowerCase().includes("sol")) {
+  setImagemClima(sun)
+} else if (res.data.toLowerCase().includes("encoberto")) {
+  setImagemClima(overcast);
+}
+else if (res.data.toLowerCase().includes("aguaceiros fracos")){
+  setImagemClima(cloudburst)
+} 
+else if (res.data.toLowerCase().includes("possibilidade de chuva irregular")){
+  setImagemClima(sporadicshowers)
+} 
+else if(res.data.toLowerCase().includes("chuva fraca")) {
+  setImagemClima(weakrain);
+}
+else {
   setImagemClima(null);
 }
 
@@ -46,6 +67,7 @@ console.log(res);
 setPrevisao(res.data);
 
 setLoading(false);
+
 
 
     } catch (error) {
