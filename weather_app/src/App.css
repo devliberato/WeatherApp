@@ -64,12 +64,19 @@ button:hover {
 }
 
 .weather-container {
+  margin: 0 auto;
   margin-top: 2rem;
 }
 
 
 .weather-container p {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ img {
+margin: 1rem 8.5rem;
+width: 150px;
+
 }

@@ -1,5 +1,6 @@
 import { useState} from 'react'
 import axios from "axios"
+import cloudy from "./img/cloud.png"
 
 
 import './App.css'
@@ -8,10 +9,14 @@ function App() {
 
   //funcionalidades 
 
+
+
   const [local, setLocal] = useState("");
   const [previsao, setPrevisao] = useState("" || null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [imagemDoClima, setImagemClima] = useState(null);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,6 +32,14 @@ function App() {
       const res = await axios.get(`https://wttr.in/${local}?format=%C+%t+%w
         
 `);
+
+
+if(res.data.toLowerCase().includes("parcialmente nublado")) {
+  setImagemClima(cloudy)
+} else {
+  setImagemClima(null);
+}
+
 console.log(res);
 
 
@@ -56,6 +69,7 @@ setLoading(false);
             setPrevisao("");
             setLoading(false);
             setError(false);
+            setImagemClima(null);
            }}} />
            <button type='submit'>Ver previsão</button>
         </form>
@@ -64,6 +78,7 @@ setLoading(false);
         {loading === true ? <p>Carregando...</p> : previsao && <p> {previsao}</p>}
         </div>
         </div>
+        {imagemDoClima && <img src={imagemDoClima}/>}
         </div>
     </div>
   )
@@ -71,6 +86,12 @@ setLoading(false);
 
 export default App
 
+//[x] importar imagem 
+//[x] logica da imagem
+//[] por mais
+//[] react router dom inserir abas
+//[] footer
+//[] identidade logo do site
 
 
 // [x] estruturar a pesquisa
