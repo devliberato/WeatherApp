@@ -1,0 +1,58 @@
+/* Cor de fundo e fonte */
+
+  
+
+
+  
+
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  button {
+    margin-left: 1rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #4CAF50; /* verde suave */
+    color: #ffffff; /* texto branco */
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* verde mais escuro ao passar o mouse */
+    opacity: 0.8;
+  }
+  
+  .form-container input {
+    flex: 1;
+    border: 1px solid #ced4da; /* borda suave */
+    outline: none;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    background-color: #f8f9fa; /* fundo claro do input */
+    color: #495057; /* texto do input mais suave */
+  }
+  
+  .weather-container {
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  
+  
+  .weather-container p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+  }
+  
+   img {
+  margin: 1.6rem 8.5rem;
+  width: 150px;
+  
+  }
