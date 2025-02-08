@@ -56,3 +56,22 @@
   width: 150px;
   
   }
+
+  @media (max-width: 388px) {
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-container button {
+      
+      margin-top: 1rem;
+      text-align: center;
+    
+    }
+
+  h1 {
+      font-size: 2rem;
+    }
+  }

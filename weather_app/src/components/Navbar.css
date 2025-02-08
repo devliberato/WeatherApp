@@ -1,16 +1,16 @@
 /* Navbar container */
 .nav-container {
-    background: linear-gradient(135deg, #56ccf2, #2f80ed);  /* Azul claro, como o céu */
+    background: linear-gradient(135deg, #56ccf2, #2f80ed); 
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombras suaves para dar profundidade */
-    border-radius: 10px;  /* Bordas arredondadas para suavizar a aparência */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+    border-radius: 10px;  
   
 }
 
-/* Lista de links dentro da navbar */
+
 .nav-container ul {
     display: flex;
     justify-content: space-around;
@@ -18,25 +18,25 @@
     list-style: none;
 }
 
-/* Estilização dos links */
+
 .nav-container a {
     text-decoration: none;
-    color: white;  /* Texto branco para contraste com o fundo */
-    font-family: 'Roboto', sans-serif;  /* Fonte moderna e limpa */
-    font-size: 1.1rem;  /* Um pouco maior para dar destaque */
+    color: white;  
+    font-family: 'Roboto', sans-serif;  
+    font-size: 1.1rem;  
     font-weight: 500;
-    letter-spacing: 1px;  /* Espaçamento entre as letras */
-    transition: all 0.3s ease-in-out;  /* Efeito suave de transição para interatividade */
+    letter-spacing: 1px;  
+    transition: all 0.3s ease-in-out;  
 }
 
-/* Efeito hover nos links */
+
 .nav-container a:hover {
-    color: #fdfdfd;  /* Muda a cor para um branco suave ao passar o mouse */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);  /* Efeito de brilho suave */
-    transform: translateY(-3px);  /* Leve "levantamento" do link */
+    color: #fdfdfd;  
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);  
+    transform: translateY(-3px);  
 }
 
-/* Ajuste de layout responsivo (em dispositivos móveis) */
+
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -49,3 +49,14 @@
         align-items: center;
     }
 }
+
+
+@media (max-width: 768px) {
+    .nav-container {
+        margin: 0 auto;
+    }
+
+
+}
+
+

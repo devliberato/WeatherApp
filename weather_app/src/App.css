@@ -1,11 +1,21 @@
 .container {
     margin: 2rem auto;
-    background: linear-gradient(135deg, #A1C4FD, #C2E9FB); /* Gradiente suave de azul claro para um azul mais suave */
+    background: linear-gradient(135deg, #A1C4FD, #C2E9FB); 
     height: 500px;
     width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra suave para destacar */
-    border-radius: 8px; /* bordas levemente arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
    
   
   }
   
+
+  @media (max-width: 400px) {
+    .container {
+     width: 80%;
+        
+    }
+
+    
+
+  }

@@ -41,6 +41,8 @@ function App() {
         
 `);
 
+console.log(res);
+
 const weatherMap = {
   "parcialmente nublado": cloudy,
   "sol": sun,
