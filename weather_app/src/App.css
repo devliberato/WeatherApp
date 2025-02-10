@@ -16,6 +16,13 @@
         
     }
 
+      .container img {
+      margin: 0 auto;
+      margin-left: 5rem;
+      width: 100px;
+      height: 100px;
+      }
+    
     
 
   }
