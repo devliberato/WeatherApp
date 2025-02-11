@@ -57,7 +57,7 @@
   
   }
 
-  @media (max-width: 388px) {
+  @media (max-width: 400px) {
 
     .form-container {
       display: flex;
@@ -69,6 +69,11 @@
       margin-top: 1rem;
       text-align: center;
     
+    }
+
+    .weather-container p {
+      font-size: 1rem;
+      margin: 1rem 0;
     }
 
    
