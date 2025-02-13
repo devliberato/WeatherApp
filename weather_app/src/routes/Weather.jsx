@@ -110,27 +110,3 @@ setLoading(false);
 }
 
 export default App
-
-//passar todo css para weather nao eh mais app.css
-//[x] importar imagem 
-//[x] logica da imagem
-//[x] por mais
-//[x] react router dom inserir aba fazer aba de navegação weather e information
-//[x] estilizar um pouco a home 
-//[x] footer
-//[] identidade logo do site e add content home e information
-//[x] responsividade
-//[] por no git de novo
-
-
-
-// [x] estruturar a pesquisa
-// [] estilizar
-// [x] pegar o value da barra de pesquisa
-//[x] colocar status se nao retornar
-//[x] configurar erro
-//[x] ver qual api será usada
-// [x] depois implementar o clique do botao e chamar a api
-// [x] organizar os dados vindo da api 
-// [x] implementar funções de carregando, erro, nao encontrou, por imagem quando nao for encontrado 
-
