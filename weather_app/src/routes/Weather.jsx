@@ -24,11 +24,13 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [imagemDoClima, setImagemClima] = useState(null);
+  const [carregando, setCarregando] = useState(false);
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setCarregando(true);
     try {
 
       if(!local) {
@@ -71,6 +73,7 @@ setImagemClima(currentWeather || null);
 setPrevisao(res.data);
 
 setLoading(false);
+setCarregando(false);
 
 
 
@@ -96,7 +99,7 @@ setLoading(false);
             setError(false);
             setImagemClima(null);
            }}} />
-           <button type='submit'>Ver previsão</button>
+           <button type='submit' disabled={carregando}>{carregando ? `Carregando...` : `Ver previsão`}</button>
         </form>
        <div className="weather-container">
         {error && <p>Este local não existe, tente novamente</p>}
