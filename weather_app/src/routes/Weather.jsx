@@ -36,6 +36,7 @@ function App() {
       if(!local) {
         setPrevisao("Insira um local");
         setLoading(false)
+        setCarregando(false)
         return
       }
       
@@ -98,6 +99,7 @@ setCarregando(false);
             setLoading(false);
             setError(false);
             setImagemClima(null);
+   
            }}} />
            <button type='submit' disabled={carregando}>{carregando ? `Carregando...` : `Ver previsão`}</button>
         </form>
