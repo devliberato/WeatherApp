@@ -99,6 +99,7 @@ setCarregando(false);
             setLoading(false);
             setError(false);
             setImagemClima(null);
+            setCarregando(false);
    
            }}} />
            <button type='submit' disabled={carregando}>{carregando ? `Carregando...` : `Ver previsão`}</button>
