@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
 
+
+//Home do projeto
 const Home = () => {
   return (
     <div className="home-container">

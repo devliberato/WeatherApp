@@ -1,5 +1,10 @@
+//Hook importado
 import { useState} from 'react'
+
+//Importação do axios
 import axios from "axios"
+
+//Importações das imagens de cada clima
 import cloudy from "../img/cloud.png"
 import sun from "../img/sun.png"
 import overcast from "../img/overcast.png"
@@ -16,9 +21,7 @@ import "./Weather.css";
 
 function App() {
 
-  //funcionalidades 
-
-
+//definindo as funcionalidades de mostrar previsao, carregar e erro
   const [local, setLocal] = useState("");
   const [previsao, setPrevisao] = useState("" || null);
   const [loading, setLoading] = useState(false);
@@ -27,6 +30,7 @@ function App() {
   const [carregando, setCarregando] = useState(false);
 
 
+  //funcao para procurar o clima
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -44,8 +48,9 @@ function App() {
         
 `);
 
-console.log(res);
 
+
+//definindo cada clima com objeto
 const weatherMap = {
   "parcialmente nublado": cloudy,
   "sol": sun,
@@ -67,6 +72,7 @@ for (let i in weatherMap) {
     break;
   }
 }
+
 
 setImagemClima(currentWeather || null);
 
