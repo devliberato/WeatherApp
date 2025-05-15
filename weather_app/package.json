@@ -1,6 +1,5 @@
 {
   "name": "weather_app",
-  "homepage": "https://devliberato.github.io/weather-app/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
