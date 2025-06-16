@@ -1,5 +1,5 @@
 //Hook importado
-import { useState} from 'react'
+import { useState } from 'react'
 
 //Importação do axios
 import axios from "axios"
@@ -21,7 +21,7 @@ import "./Weather.css";
 
 function App() {
 
-//definindo as funcionalidades de mostrar previsao, carregar e erro
+
   const [local, setLocal] = useState("");
   const [previsao, setPrevisao] = useState("" || null);
   const [loading, setLoading] = useState(false);
@@ -30,93 +30,93 @@ function App() {
   const [carregando, setCarregando] = useState(false);
 
 
-  //funcao para procurar o clima
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setCarregando(true);
     try {
 
-      if(!local) {
+      if (!local) {
         setPrevisao("Insira um local");
         setLoading(false)
         setCarregando(false)
         return
       }
-      
+
       const res = await axios.get(`https://wttr.in/${local}?format=%C+%t+%w
         
 `);
 
 
 
-//definindo cada clima com objeto
-const weatherMap = {
-  "parcialmente nublado": cloudy,
-  "sol": sun,
-  "encoberto": overcast,
-  "aguaceiros fracos": cloudburst,
-  "possibilidade de chuva irregular": sporadicshowers,
-  "chuva fraca": weakrain,
-  "céu limpo": clearsky,
-  "nevoeiro gelado": icefog,
-  "nevoeiro": foggy,
-  "neblina": mist,
-};
+      const weatherMap = {
+        "parcialmente nublado": cloudy,
+        "sol": sun,
+        "encoberto": overcast,
+        "aguaceiros fracos": cloudburst,
+        "possibilidade de chuva irregular": sporadicshowers,
+        "chuva fraca": weakrain,
+        "céu limpo": clearsky,
+        "nevoeiro gelado": icefog,
+        "nevoeiro": foggy,
+        "neblina": mist,
+      };
 
-let currentWeather = null;
+      let currentWeather = null;
 
-for (let i in weatherMap) {
-  if(res.data.toLowerCase().includes(i)) {
-    currentWeather = weatherMap[i];
-    break;
-  }
-}
-
-
-setImagemClima(currentWeather || null);
+      for (let i in weatherMap) {
+        if (res.data.toLowerCase().includes(i)) {
+          currentWeather = weatherMap[i];
+          break;
+        }
+      }
 
 
-setPrevisao(res.data);
+      setImagemClima(currentWeather || null);
 
-setLoading(false);
-setCarregando(false);
+
+      setPrevisao(res.data);
+
+      setLoading(false);
+      setCarregando(false);
 
 
 
     } catch (error) {
       setError(true);
       setLoading(false);
-      
+
     }
 
   }
 
   return (
-      
-      <div>
-    
-       <div className="container">
-       <h1>Procure pelo clima de um local:</h1>
-       <div className="form-container">
-        <form onSubmit={handleSubmit}>
-           <input type="text" placeholder='Busque aqui o lugar...' value={local} onChange={(e) => {setLocal(e.target.value); if(e.target.value === "") {
-            setPrevisao("");
-            setLoading(false);
-            setError(false);
-            setImagemClima(null);
-            setCarregando(false);
-   
-           }}} />
-           <button type='submit' disabled={carregando}>{carregando ? `Carregando...` : `Ver previsão`}</button>
-        </form>
-       <div className="weather-container">
-        {error && <p>Este local não existe, tente novamente</p>}
-        {loading === true ? <p>Carregando...</p> : previsao && <p> {previsao}</p>}
+
+    <div>
+
+      <div className="container">
+        <h1>Procure pelo clima de um local:</h1>
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <input type="text" placeholder='Busque aqui o lugar...' value={local} onChange={(e) => {
+              setLocal(e.target.value); if (e.target.value === "") {
+                setPrevisao("");
+                setLoading(false);
+                setError(false);
+                setImagemClima(null);
+                setCarregando(false);
+
+              }
+            }} />
+            <button type='submit' disabled={carregando}>{carregando ? `Carregando...` : `Ver previsão`}</button>
+          </form>
+          <div className="weather-container">
+            {error && <p>Este local não existe, tente novamente</p>}
+            {loading === true ? <p>Carregando...</p> : previsao && <p> {previsao}</p>}
+          </div>
         </div>
-        </div>
-        {imagemDoClima && <img src={imagemDoClima}/>}
-        </div>
+        {imagemDoClima && <img src={imagemDoClima} />}
+      </div>
     </div>
   )
 }
